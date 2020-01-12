@@ -1,0 +1,30 @@
+{
+    "name": "@mamis/magento2-gulp-clean",
+    "version": "0.0.1",
+    "description": "Magento2 Gulp Task to clean theme static assets",
+    "keywords": [
+        "magento2",
+        "gulp",
+        "theme",
+        "clean"
+    ],
+    "author": {
+        "name": "Matthew Muscat",
+        "email": "matthew@mamis.com.au"
+    },
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mamis/magento2-gulp.git"
+    },
+    "main": "index.js",
+    "homepage": "https://github.com/mamis/magento2-gulp",
+    "bugs": {
+        "url": "https://github.com/mamis/magento2-gulp/issues"
+    },
+    "dependencies": {
+        "@mamis/magento2-gulp": "^0.0.1",
+        "del": "^5.1.0",
+        "vinyl-paths": "^3.0.1"
+    }
+}

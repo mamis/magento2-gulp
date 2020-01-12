@@ -1,0 +1,26 @@
+{
+    "magento/theme-frontend-blank": {
+        "source": "vendor/magento/theme-frontend-blank",
+        "destination": "pub/static/frontend/Magento/blank",
+        "locale": [
+            "en_US"
+        ],
+        "modules": {},
+        "includePaths": [],
+        "ignore": [
+            ".test"
+        ]
+    },
+    "magento/theme-frontend-luma": {
+        "source": "vendor/magento/theme-frontend-luma",
+        "destination": "pub/static/frontend/Magento/luma",
+        "locale": [
+            "en_US"
+        ],
+        "modules": {},
+        "includePaths": [],
+        "ignore": [
+            ".test"
+        ]
+    }
+}

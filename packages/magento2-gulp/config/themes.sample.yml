@@ -1,0 +1,16 @@
+---
+magento/theme-frontend-blank:
+  src: vendor/magento/theme-frontend-blank
+  dest: pub/static/frontend/Magento/blank
+  locale:
+    - en_US
+  ignore:
+    - ".test"
+
+magento/theme-frontend-luma:
+  src: vendor/magento/theme-frontend-luma
+  dest: pub/static/frontend/Magento/luma
+  locale:
+    - en_US
+  ignore:
+  - ".test"
