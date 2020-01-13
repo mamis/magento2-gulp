@@ -15,4 +15,7 @@ export const copy = copyTask
 export const less = lessTask
 export const sass = sassTask
 
-export const styles = parallel(lessTask, sassTask)
+export const styles = series(
+    inheritance,
+    parallel(lessTask, sassTask)
+)

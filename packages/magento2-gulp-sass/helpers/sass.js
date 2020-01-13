@@ -1,10 +1,12 @@
-import { src } from 'gulp'
 import path from 'path'
-import sass from 'gulp-sass'
-import rename from 'gulp-rename'
-import multiDest from 'gulp-multi-dest'
+import { src } from 'gulp'
+import cleanCss from 'gulp-clean-css'
 import logger from 'gulp-logger'
-import postcss from 'gulp-postcss'
+import multiDest from 'gulp-multi-dest'
+import rename from 'gulp-rename'
+import sass from 'gulp-sass'
+import sourcemaps from 'gulp-sourcemaps'
+import yargs from 'yargs'
 
 import config from '@mamis/magento2-gulp/helpers/config'
 import { themes } from '@mamis/magento2-gulp/helpers/themes'
@@ -17,9 +19,8 @@ export default function(name, file) {
     const sources = []
     const destinations = []
     const includePaths = theme.includePaths ? theme.includePaths : []
-    const stylesDir = theme.stylesDir ? theme.stylesDir : ''
-
-    const production = false//env.prod || false
+    const stylesDir = theme.stylesDir ? theme.stylesDir : 'css'
+    const production = yargs.argv.production ? true : false
     // const browserslist = config('browserslist.yml')
 
     // Add SCSS files to the list of sources we wish to process
@@ -36,13 +37,13 @@ export default function(name, file) {
     theme.locale.forEach(
         locale => {
             destinations.push(
-                path.join(projectPath, theme.destination, locale, stylesDir)
+                path.join(projectPath, theme.destination, locale)
             )
         }
     )
 
     // Run tasks on all Sass files
-	const gulpTask = src(sources)
+	let gulpTask = src(sources)
         .pipe(
             sass(
                 {
@@ -57,22 +58,17 @@ export default function(name, file) {
                 }
             )
         )
-        // .pipe(
-        //     rename(adjustDestinationDirectory)
-        // )
-        // .pipe(
-        //     postcss([
-        //         // @TODO: Move to configurable setting
-        //         postcssLogical({
-        //             dir: 'ltr',
-        //             preserve: true
-        //         }),
-        //         prefix({
-        //             cascade: true,
-        //             remove: true
-        //         })
-        //     ])
-        // )
+        .pipe(
+            rename(
+                (file) => {
+                    if (file.dirname.startsWith('web/css')) {
+                        file.dirname = file.dirname.replace('web/css', stylesDir)
+                    }
+
+                    return file
+                }
+            )
+        )
         .pipe(
             multiDest(destinations)
         )
@@ -85,20 +81,19 @@ export default function(name, file) {
         );
 
     if (production) {
-        gulpTask = gulpTask.pipe(
+        gulpTask = gulpTask.pipe(sourcemaps.init())
+            .pipe(
                 rename({
                     extname: '.min.css'
                 })
             )
             .pipe(
-                postcss([
-                    minify({
-                        discardComments: {
-                            removeAll: true
-                        }
-                    })
-                ])
+                cleanCss({
+                    sourceMap: true,
+                    inline: false
+                })
             )
+            .pipe(sourcemaps.write('.'))
             .pipe(
                 multiDest(destinations)
             )
@@ -106,7 +101,7 @@ export default function(name, file) {
                 logger({
                     display: 'name',
                     beforeEach: 'Theme: ' + name + ' ',
-                    afterEach : ' Compiled!'
+                    afterEach : ' Minified!'
                 })
             );
     }
