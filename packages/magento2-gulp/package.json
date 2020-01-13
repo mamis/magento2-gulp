@@ -1,6 +1,6 @@
 {
     "name": "@mamis/magento2-gulp",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Magento2 tooling for themes",
     "keywords": [
         "magento2",
