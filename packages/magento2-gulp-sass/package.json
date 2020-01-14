@@ -1,6 +1,6 @@
 {
     "name": "@mamis/magento2-gulp-sass",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Magento2 Gulp Task to compile sass assets",
     "keywords": [
         "magento2",

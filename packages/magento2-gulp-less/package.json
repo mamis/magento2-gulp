@@ -1,6 +1,6 @@
 {
     "name": "@mamis/magento2-gulp-less",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Magento2 Gulp Task to compile less assets",
     "keywords": [
         "magento2",

@@ -53,7 +53,7 @@ export default (name, tree = true) => {
                     }
 
                     // Inherit Magento UI Library if this is a less-based theme
-                    if (true || theme.dsl == 'less') {
+                    if (theme.dsl == 'less') {
                         module.exports.inherit(
                             path.join(projectPath, 'lib/web/css/source'),
                             path.join(themeDestination, 'web/css/source'),

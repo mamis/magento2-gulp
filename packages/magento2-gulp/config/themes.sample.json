@@ -1,7 +1,8 @@
 {
-    "magento/theme-frontend-blank": {
-        "source": "vendor/magento/theme-frontend-blank",
-        "destination": "pub/static/frontend/Magento/blank",
+    "magento/theme-adminhtml-backend": {
+        "source": "vendor/magento/theme-adminhtml-backend",
+        "destination": "pub/static/adminhtml/Magento/backend",
+        "dsl": "less",
         "locale": [
             "en_US"
         ],
@@ -11,9 +12,23 @@
             ".test"
         ]
     },
-    "magento/theme-frontend-luma": {
+    "magento/theme-frontend-blank": {
+        "source": "vendor/magento/theme-frontend-blank",
+        "destination": "pub/static/frontend/Magento/blank",
+        "dsl": "less",
+        "locale": [
+            "en_US"
+        ],
+        "modules": {},
+        "includePaths": [],
+        "ignore": [
+            ".test"
+        ]
+    },
+    "magento/theme-frontend-lump": {
         "source": "vendor/magento/theme-frontend-luma",
         "destination": "pub/static/frontend/Magento/luma",
+        "dsl": "less",
         "locale": [
             "en_US"
         ],
