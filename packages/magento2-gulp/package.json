@@ -1,6 +1,6 @@
 {
     "name": "@mamis/magento2-gulp",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Magento2 tooling for themes",
     "keywords": [
         "magento2",
@@ -22,10 +22,10 @@
         "url": "https://github.com/mamis/magento2-gulp/issues"
     },
     "dependencies": {
-        "@mamis/magento2-gulp-clean": "^0.0.1",
-        "@mamis/magento2-gulp-copy": "^0.0.1",
-        "@mamis/magento2-gulp-less": "^0.0.3",
-        "@mamis/magento2-gulp-sass": "^0.0.3",
+        "@mamis/magento2-gulp-clean": "^0.0.4",
+        "@mamis/magento2-gulp-copy": "^0.0.4",
+        "@mamis/magento2-gulp-less": "^0.0.4",
+        "@mamis/magento2-gulp-sass": "^0.0.4",
         "ansi-colors": "^4.1.1",
         "esm": "^3.2.25",
         "fancy-log": "^1.3.3",
