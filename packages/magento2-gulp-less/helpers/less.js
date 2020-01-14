@@ -3,9 +3,11 @@ import path from 'path'
 import globby from 'globby'
 import { src } from 'gulp'
 import cleanCss from 'gulp-clean-css'
+import gulpif from 'gulp-if'
 import logger from 'gulp-logger'
 import less from 'gulp-less'
 import multiDest from 'gulp-multi-dest'
+import postcss from 'gulp-postcss'
 import rename from 'gulp-rename'
 import sourcemaps from 'gulp-sourcemaps'
 import yargs from 'yargs'
@@ -23,11 +25,17 @@ export default function(name, file) {
     const stylesDir = theme.stylesDir ? theme.stylesDir : 'css'
     const production = yargs.argv.production ? true : false
     // const browserslist = config('browserslist.yml')
+    let postcssPlugins = theme.postcss ? theme.postcss : []
 
     module.exports.resolveMagentoImport(theme)
 
     // Add less files to the list of sources we wish to process
     sources.push(file || source + '/**/[^_]*.less')
+
+    // Evaluate postcss plugins to run in the pipeline
+    postcssPlugins = postcssPlugins.map(
+        postcssPlugin => eval(postcssPlugin)
+    )
 
     // Add the include path direcotires to the areas we do not wish to process
     // (avoids processing node asset dependancies that are not called upon from within the theme)
@@ -67,6 +75,12 @@ export default function(name, file) {
 
                     return file
                 }
+            )
+        )
+        .pipe(
+            gulpif(
+                postcssPlugins.length,
+                postcss(postcssPlugins)
             )
         )
         .pipe(
