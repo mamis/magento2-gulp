@@ -1,6 +1,6 @@
 {
     "name": "@mamis/magento2-gulp-copy",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "Magento2 Gulp Task to copy static assets for publishing",
     "keywords": [
         "magento2",
