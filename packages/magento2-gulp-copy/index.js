@@ -4,7 +4,7 @@ import path from 'path'
 import log from 'fancy-log'
 import colors from 'ansi-colors'
 
-import { projectPath } from '@mamis/magento2-gulp/helpers/paths'
+import { tempPath } from '@mamis/magento2-gulp/helpers/paths'
 import { themes, themeNames } from '@mamis/magento2-gulp/helpers/themes'
 
 export const copy = (callback) => {
@@ -39,7 +39,7 @@ export const copy = (callback) => {
                     )
 
                     src(
-                        path.join(projectPath, themeConfig.source, copy.source)
+                        path.join(tempPath, themeConfig.source, copy.source)
                     )
                     .pipe(
                         multiDest(destinations)
