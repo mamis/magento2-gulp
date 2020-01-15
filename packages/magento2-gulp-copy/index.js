@@ -39,7 +39,7 @@ export const copy = (callback) => {
                     )
 
                     src(
-                        path.join(tempPath, themeConfig.source, copy.source)
+                        path.join(tempPath, themeConfig.destination, copy.source)
                     )
                     .pipe(
                         multiDest(destinations)
