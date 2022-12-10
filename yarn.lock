@@ -780,6 +780,27 @@
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
 
+"@mamis/magento2-gulp-clean@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@mamis/magento2-gulp-clean/-/magento2-gulp-clean-0.0.1.tgz#7cf1e766579944d95e98588b1ad63b3342781483"
+  integrity sha512-QkAoFXTLsuIaFezFKVmFx4BDCEki9vNcOSFUWvVtv+inpU8ojXDPX0+xyal6dWUwQnHrK7fi4zJP0kpVKJDTVQ==
+  dependencies:
+    "@mamis/magento2-gulp" "^0.0.1"
+    del "^5.1.0"
+    vinyl-paths "^3.0.1"
+
+"@mamis/magento2-gulp-copy@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@mamis/magento2-gulp-copy/-/magento2-gulp-copy-0.0.1.tgz#febbfd6481b0d4dfb0575a8408be30b892568e87"
+  integrity sha512-kj2ykMbv2iv1QGuRI3sSFPJTOOSzJPd8uyYeP4c5GhD3eRX4C6kYB224iZTHASsDHKmHkxTsq/cq9HT9TJp8uQ==
+  dependencies:
+    "@mamis/magento2-gulp" "^0.0.1"
+    ansi-colors "^4.1.1"
+    fancy-log "^1.3.3"
+    gulp "^4.0.2"
+    gulp-multi-dest "^1.3.7"
+    path "^0.12.7"
+
 "@mamis/magento2-gulp-less@0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@mamis/magento2-gulp-less/-/magento2-gulp-less-0.0.1.tgz#459a50dbd9a57ac414a6b20ffdc9f983ac98a735"
@@ -5619,9 +5640,9 @@ q@^1.5.1:
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
 
 qs@~6.5.2:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
-  integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.3.tgz#3aeeffc91967ef6e35c0e488ef46fb296ab76aad"
+  integrity sha512-qxXIEh4pCGfHICj1mAJQ2/2XVZkjCDTcEgfoSQxc/fYivUZxTkk7L3bDBJSoNrEzXI17oUO5Dp07ktqE5KzczA==
 
 quick-lru@^1.0.0:
   version "1.1.0"
